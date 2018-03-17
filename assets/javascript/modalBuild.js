@@ -4,13 +4,13 @@ $(".recipe-btn").on("click", function () {
     //console.log(idArr);
     database.ref('recipeCards/recipe' + j).once('value', function (data) {
         $("#list").empty();
-
         $("#title").html(data.val().title);
         $("#likes").text(data.val().likes);
         $("#time").text(data.val().time);
         $("#diets").text(data.val().diets);
         $("#image").attr("src", data.val().picture);
         $("#instructions").text(data.val().instructions);
+
         let modalUrl = $("<a>Official Recipe</a>");
         modalUrl.attr("href", data.val().url);
         $("#url").html(modalUrl);
@@ -23,5 +23,14 @@ $(".recipe-btn").on("click", function () {
             ul.append(li);
             $("#list").append(ul);
         };
+
+        let ol = $("<ol>");
+        for (let x = 0; x < data.val().instructionList.length; x++) {
+            let li = $("<li>");
+            li.append(data.val().instructionList[x]);
+            ol.append(li);
+        };
+
+        $("#instructionList").append(ol);
     });
 });

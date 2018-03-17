@@ -1,34 +1,38 @@
 # Project-1
-Food API 
+Quick Bytes
 
 Team Members : Patrick Marrin, Joey Bridges, Wesley Hanson, Corey Richard.
 
 Project Overview:
 
-Small toggle, either searching by what you want to make, 
+Quick Bytes is a clean easy to use recipe webapp
 
-or what you have in your kitchen to fill in a dish
-using recipe API from Spoonacular, the search goes through an returns a few recipes (10?), with picture so you can see what the dish looks like. 
+Features include:
+-Searching up to five different ingredients and returning random recipe results
+-Nine recipe results are displayed on a second page with pictures, a clickable title, and an add to favorites button
+-On title click displayes a modal of that recipe with a larger picture, ingredients, number of likes recipe has, type of diet, and recipe instructions 
+-Google map feature added at bottom of modal if user would like to search for stores in the area if they may be missing ingredients
+-Map finds user location and searches stores in a radius based on user input
+-More results button at bottom of pages loads nine new random results
+-User sign up/login allows user to join/login to Quick Bytes
+-Users that join Quick Bytes have access to add recipes to their favorites
+-When user clicks add to favorites button (star) adds that recipe card to favorites area on home page
 
-based on your original toggle, the webApp will connect to google maps API to show the nearest stores to you, either for the full list of ingredients or just for what you still need to get to make. 
 
-small click boxes on the bottom of the page so we can filter out certain allergies, or food choices (vegan etc.) 
 
-next arrow to replace all recipes on page with 10 new ones. 
-
-sign in with facebook/google/github
-option to save recipes to a “Favorite Recipe” page attached to your user when you can rate the recipes. you try and leave comments on them. ()
-
-Clean user-friendly API. not very cluttered easy to navigate. 
-
-API to be used: 
+APIs used: 
 https://spoonacular.com/food-api
 https://developers.google.com/maps/
 
-Breakdown of duties: 
-Explore API restrictions and usage
-Design ui with bootstrap 4, allowing us to learn ahead of the market.
-Research and learn new library Vue.js
-Pseudo code JS 
-Code through Vue.js and firebase. 
-Hard test and bugshoot. 
+Database used:
+Firebase
+
+Libraries used:
+Bootstrap 4
+Animate.css
+Jquery
+Font Awesome
+Google fonts
+
+
+
