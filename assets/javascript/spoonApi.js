@@ -6,12 +6,13 @@
 //spoonacular-recipe-food-nutrition-v1.p.mashape.com
 
 
-$("#recipeSearch").on("click", function (e) {
+$("#recipeSearch, #moreResults").on("click", function (e) {
   e.preventDefault();
 
   let search = (search1 + "%2C" + search2 + "%2C" + search3 + "%2C" + search4 + "%2C" + search5);
+  console.log(search);
 
-  let queryUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=9&tags=' + search;
+  let queryUrl = 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=1&tags=' + search;
 
   // let queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/838902/nutritionWidget?defaultCss=true"
   // let queryUrl = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/guessNutrition?title=Spaghetti+Aglio+et+Olio"
@@ -64,7 +65,7 @@ $("#recipeSearch").on("click", function (e) {
         diets.push("  " + dietsArr[j]);
       }
 
-      database.ref("/recipeCards/recipe" + number).set({
+      database.ref(key + "/recipeCards/recipe" + number).set({
         title: recipeTitle,
         picture: recipeImage,
         likes: recipeLikes,
@@ -81,13 +82,13 @@ $("#recipeSearch").on("click", function (e) {
     }
   });
 });
+function updateRecipes() {
+  database.ref(key + "/recipeCards").on('value', function (snapshot) {
+    console.log(key);
+    for (let i = 1; i < 10; i++) {
+      $("#basicModal-" + i).html(snapshot.val()['recipe' + i].title);
 
-database.ref("/recipeCards").on('value', function (snapshot) {
-
-  for (let i = 1; i < 10; i++) {
-    $("#basicModal-" + i).html(snapshot.val()['recipe' + i].title);
-
-    $("#recipePic" + i).attr("src", snapshot.val()['recipe' + i].picture);
-  }
-});
-
+      $("#recipePic" + i).attr("src", snapshot.val()['recipe' + i].picture);
+    }
+  });
+}

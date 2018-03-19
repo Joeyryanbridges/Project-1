@@ -28,7 +28,7 @@ h1 {
 }
 .mainSearch {
     position: absolute !important;
-    top: 55%;
+    top: 50%;
     left: 10%;
     margin:auto;
     max-width: 80%;
@@ -124,7 +124,7 @@ h1 {
     padding: 0;
 }
 .card-img-top {
-    border: 5px solid  rgba(51, 51, 51, 0.815)ck;
+    border: 5px solid  rgba(51, 51, 51, 0.815);
     border-radius: 20px !important;
 }
 .mainCard{
@@ -153,13 +153,13 @@ div.modal-footer {
     border: 0.5px solid black;
     font-family: 'Tinos', serif;
 }
-#map {
+#map, #map1 {
     height: 225px;
     display: none; 
     width: 100%;
     background: white;
 }
-#miles {
+#miles, #miles1 {
     width: 15%;
 }
 .truncate {
@@ -171,6 +171,13 @@ div.modal-footer {
     display: none;
 }
 .moreResults {
+    position: absolute;
+    box-shadow: 0 32px 32px 0 rgba(0, 0, 0, 0.801), 0 6px 20px 0 rgba(0, 0, 0, 0.623);
+    right: 15px;
+    margin-top: -45px !important;
+    margin-bottom: 20px;
+}
+.homeBtn {
     position: absolute;
     box-shadow: 0 32px 32px 0 rgba(0, 0, 0, 0.801), 0 6px 20px 0 rgba(0, 0, 0, 0.623);
     right: 15px;
@@ -216,10 +223,18 @@ div.modal-footer {
 .favBtn {
     box-shadow: 0 22px 22px 0 rgba(0, 0, 0, 0.801), 0 6px 20px 0 rgba(0, 0, 0, 0.623);
     position: absolute !important;
-    top: 61%;
+    top: 56%;
     left: 10%;
     margin:auto;
     border-radius: 5px;
+}
+
+.favoritesCard{
+    display: inline-flex !important;
+}
+
+#favsInfo{
+   display: none; 
 }
 @media only screen and (max-width: 600px) {
     .favBtn {
@@ -274,14 +289,21 @@ div.modal-footer {
         font-size: 4em;
         margin-bottom: -90px !important;
     }
+    .homeBtn {
+    position: absolute;
+    box-shadow: 0 32px 32px 0 rgba(0, 0, 0, 0.801), 0 6px 20px 0 rgba(0, 0, 0, 0.623);
+    right: 15px;
+    margin-top: -45px !important;
+    margin-bottom: 20px;
+    }
 }
 .modal-content{ 
    background: url("../images/wallpaper.png"); 
 }
-.favoriteText{
+h5.modal-title.favoriteText{
     font-family: 'Dancing Script', cursive !important;
     color: white;
-    font-size: 4em;
+    font-size: 4.5em;
     text-shadow: 0 20px 20px #050505;
     padding-left:25%;
 }
@@ -303,7 +325,7 @@ div.modal-footer {
 #list, #instructions, #css-likes {
     font-family: 'Tinos', serif;
 }
-#instructions {
+#instructionList {
     clear: left;
 }
 #cook-time,  #diets{
@@ -372,7 +394,6 @@ div.modal-footer {
     text-shadow: 0 20px 20px #050505;
     margin-top: -90px;
     margin-bottom: -30px !important;
-
 }
 /* .hide {
     visibility: hidden;

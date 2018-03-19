@@ -82,9 +82,11 @@ auth.onAuthStateChanged(firebaseUser => {
         $("#btnLogin, #btnSignUp, #txtEmail, #txtPassword").hide();
         key = firebaseUser.uid;
         console.log(key);
+        updateRecipes()
     } else {
         console.log('not logged in');
         $("#btnLogin, #btnSignUp").show();
+        updateRecipes();
     }
 });
 

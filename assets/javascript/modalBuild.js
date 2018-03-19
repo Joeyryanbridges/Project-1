@@ -2,14 +2,15 @@ $(".recipe-btn").on("click", function () {
     var idArr = $(this).attr('id').split('');
     var j = idArr[idArr.length - 1];
     //console.log(idArr);
-    database.ref('recipeCards/recipe' + j).once('value', function (data) {
+    database.ref(key + '/recipeCards/recipe' + j).once('value', function (data) {
         $("#list").empty();
+        $("#instructionList").empty();
         $("#title").html(data.val().title);
         $("#likes").text(data.val().likes);
         $("#time").text(data.val().time);
         $("#diets").text(data.val().diets);
         $("#image").attr("src", data.val().picture);
-        $("#instructions").text(data.val().instructions);
+        // $("#instructions").text(data.val().instructions);
 
         let modalUrl = $("<a>Official Recipe</a>");
         modalUrl.attr("href", data.val().url);

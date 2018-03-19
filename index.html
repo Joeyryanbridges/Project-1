@@ -98,15 +98,59 @@
       <!-- Modal content-->
       <div class="modal-content animated flipInX">
         <div class="modal-header">
-          <h4 class="modal-title favoriteText">Favorite Receipes</h4>
+          <h5 class="modal-title favoriteText">Favorite Receipes</h5>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body" id='favoritesDisplay'>
           <div class="container" id="favoritesCardDisplay"></div>
           <div id="favoritesRecipeDisplay"></div>
         </div>
-      </div>
+        <div class="modal-footer">
+          <div class="container modal-text" id="favsInfo">
+            <div class="row">
+                <h2 class="col-md-8" id="title1"></h2>
+                <p class="offset-md-2 col-md-2" id="css-likes">
+                    <i class="fas fa-heart"></i> Likes:
+                    <span id="likes1"></span>
+                </p>
+            </div>
+            <hr>
+            <div class="row">
+                <p class="offset-md-1 col-md-5" id="cook-time">Cooking Time:
+                    <span id="time1"></span> Minutes
+                </p>
+                <p class="offset-md-1 col-md-5 text-right" id="diets"></p>
+            </div>
+            <hr>
+            <div id="modal-image" class="col-md-8 img-thumbnail">
+                <img class="img-fluid" id="image1">
+            </div class="col-md-4">
+            <div id="list1"></div>
 
+
+            <div id="instructions1" class="text-center-left"></div>
+            <hr>
+            <div id="instructionList1" class="text-center-left"></div>
+            <hr>
+            <div id="url1"></div>
+            <div class="modal-footer storeFind center">
+
+              <label for="miles1" id="getStores1" class="searchStores">Missing ingredients? Search stores within
+                  <input id="miles1" type="number">miles
+                  <button type="button" id="mapBtn1" class="btn btn-dark btn-sm ">
+                      <center>Go</center>
+                  </button>
+              </label>
+            </div>
+            <div class="modal-footer">
+              <div id="map1"></div>
+          </div>
+            
+        </div>
+        
+    </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -126,6 +170,8 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
     crossorigin="anonymous"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtR9jBUO3uHdJanJp28hI5S6YpZsWl02U&libraries=places&callback=initMap1"
+        async defer></script>
   <!-- local js file Link -->
   <!-- <script src="assets/javascript/auth.js"></script> -->
 

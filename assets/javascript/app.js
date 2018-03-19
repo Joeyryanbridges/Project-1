@@ -38,12 +38,14 @@ $("#recipeSearch").on("click", function () {
         var search5 = $("#ingredient5");
     }
 });
-
+function homeLoad() {
+    window.location.href = 'index.html'
+}
 function secondPageLoad() {
 
     setTimeout(function () {
         window.location.href = 'index2.html'
-    }, 3000)
+    }, 5000)
 };
 $(".recipe-btn").on("click", function () {
     setTimeout(function () {
@@ -83,7 +85,7 @@ function generateMap(kw, rad) {
                     scaledSize: new google.maps.Size(48, 48)
                 }
             });
-            
+
             infoWindow.setPosition(pos);
             map.setCenter(pos);
 
@@ -108,6 +110,12 @@ function initMap() {
         zoom: 9,
     });
 }
+function initMap1() {
+    map = new google.maps.Map(document.getElementById('map1'), {
+        center: { lat: 32.2217, lng: -110.9265 },
+        zoom: 9,
+    });
+}
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
@@ -128,7 +136,7 @@ function createMarkers(places) {
 
     for (var i = 0, place; place = places[i]; i++) {
 
-        
+
         var marker = new google.maps.Marker({
             map: map,
             title: place.name,
@@ -154,6 +162,17 @@ $(document).ready(function () {
         var rad = 4828.03;
         if ($('#miles').val() != 0) {
             rad = $('#miles').val() * 1609.34;
+        }
+        generateMap(['grocery', 'store'], rad);
+    })
+})
+$(document).ready(function () {
+
+    $('#mapBtn1').on('click', function () {
+        $("#map1").slideDown(2000);
+        var rad = 4828.03;
+        if ($('#miles1').val() != 0) {
+            rad = $('#miles1').val() * 1609.34;
         }
         generateMap(['grocery', 'store'], rad);
     })
